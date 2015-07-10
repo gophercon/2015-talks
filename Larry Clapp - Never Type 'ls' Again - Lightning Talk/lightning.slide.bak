@@ -1,0 +1,149 @@
+ntla
+Never Type 'ls' Again: A web-based shell & editor for Linux & MacOS X
+10 Jul 2015
+
+Larry Clapp
+Huck Ridge Software LLC
+larry@huckridge.com
+http://huckridge.com/ntla
+@readcodesing
+@ntla_shell
+
+* ntla overview
+
+- ntla is a shell-as-web-app.
+- A server runs on your computer, under your own user ID, like a regular shell.
+- Instead of a terminal, you interact with it via your browser.
+- You can easily navigate your directory tree by point-and-click.
+- The server runs commands and streams you the output over a websocket.
+- Command output is saved to disk in a persistent database.
+# - ntla is $20
+# - Various bits of the UI make it a little friendlier than a regular shell interface.
+# - ntla is self-contained and does not require Internet access.  All code is served locally.  You could run it on your laptop on an airplane.
+# - ntla is a closed-source commercial application ($20).  I currently include the JS unminified, but the server is executable only.
+
+* Screenshot
+
+A little command history, the directory browser, and the command editor.
+More detail later.
+
+.image ntla_screenshot_1.png 450 _
+
+* Brief live demo
+
+- Show a directory
+- Run a command
+
+* Motivation
+
+- Navigating an unfamiliar tree can be unnecessarily tedious:
+  ls, cd dir1, ls, cd dir2, ls, cd dir3 ...
+- Styling a directory listing:
+
+  color: "green"
+  
+vs.
+
+  LS_COLORS='no=00:fi=00:di=01;34:ln=01;36;40:...'
+
+- Save commands run and their output to a persistent database.  Like scrollback in your terminal or screen session, only more persistent.
+- Edit remote files locally.
+- Instead of hacking on Vim in C or Vimscript, hack on CodeMirror in JavaScript.
+
+* Directory browser: Sort by name
+
+.image browser_by_name.png 200 _
+.image browser_by_name_reversed.png 200 _
+
+* Directory browser: Filtered by name
+
+.image browser_filtered.png _ 1000
+
+* Directory browser: Clickable directory components
+
+.image clickable_directory_components.png _ 1000
+
+* Run a command
+
+.image run_a_cmd.png _ 1000
+
+* Filter command history
+
+.image filter_cmd_history.png _ 1000
+
+* Filter output history
+
+.image filter_cmd_output.png 550 _
+
+* Make a table
+
+Example output
+
+.image delimited_text.png 200 _
+
+Press 't'
+
+.image make_a_table.png 200 _
+
+* Edit command output in-place
+
+Press 'e', cut out everything but column 3:
+
+.image edit_in_place.png 200 _
+
+* Run Go with gore
+
+.image run_go_with_gore.png
+
+* Run regular Go
+
+.image run_go_regular.png
+
+* Run JavaScript
+
+Example output; note "Index: 38"
+
+.image js_on_prev_output_1.png _ 1000
+
+grep for select in hist[38]
+
+.image js_on_prev_output_2.png _ 1000
+
+* Run JavaScript; make a table
+
+Press 't' to make a table.
+
+.image js_on_prev_output_2_as_table.png _ 1000
+
+* Edit a file
+
+Click login.html ...
+
+.image edit_a_file_before.png 200 _
+
+login.html opens in the editor tab.
+
+.image edit_a_file_after.png 200 _
+
+* Resources
+
+Product home page: [[http://huckridge.com/ntla]]
+Public Trello board: [[https://trello.com/b/3Elqkbh5/ntla-shell]] -- future directions, ideas, bugs.
+Google Group: [[https://groups.google.com/forum/#!forum/ntla_shell]] -- support and discussion.
+
+Or just Google "ntla shell", I'm the top 5 hits.
+
+Don't search just for "ntla", you'll get the National Tax Lien Association.
+
+Or just come up and chat!
+
+* Closing
+
+Thanks to 
+
+- the Go team
+- the GopherCon organizers
+- everyone involved with the Con
+- all of you
+- my friends Tom Cooper and Aaron Greenlee for mentoring and support
+- and of course my wife Roxanne
